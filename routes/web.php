@@ -19,3 +19,8 @@ Route::get('/', function () {
 Route::get('prueba',function(){
 	return "Hola esta es una prueba de luis Pérez Contreras";
 });
+
+//ruta con parametro
+Route::get('prueba/{nombre}',function($nombre){
+	return "Hola mi nombre es: ".$nombre;
+});
