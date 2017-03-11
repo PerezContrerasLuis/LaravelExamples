@@ -30,3 +30,6 @@ Route::get('controlador','PruebaController@index');
 
 //ruta que enlaza a controlador PruebaController pasando parametro nombre
 Route::get('controlador/{nombre}','PruebaController@printNombre');
+
+//ruta que enlaza a controlador MovieController pero usando resource
+Route::resource('movie','MovieController');
