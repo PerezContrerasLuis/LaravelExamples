@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+//ruta de prueba
+Route::get('prueba',function(){
+	return "Hola esta es una prueba de luis Pérez Contreras";
+});
