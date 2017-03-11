@@ -27,3 +27,6 @@ Route::get('prueba/{nombre}',function($nombre){
 
 //ruta que enlaza a controlador PruebaController
 Route::get('controlador','PruebaController@index');
+
+//ruta que enlaza a controlador PruebaController pasando parametro nombre
+Route::get('controlador/{nombre}','PruebaController@printNombre');

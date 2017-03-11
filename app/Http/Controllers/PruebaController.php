@@ -15,4 +15,10 @@ class PruebaController extends BaseController
 
     	return "Hola desde el controlador PruebaController";
     }
+
+    public function printNombre($nombre){
+
+    	return "Hola desde controlador PruebaController , por cierto mi nombre es: ".$nombre;
+    	
+    }
 }
