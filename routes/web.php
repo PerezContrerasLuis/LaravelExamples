@@ -33,3 +33,7 @@ Route::get('controlador/{nombre}','PruebaController@printNombre');
 
 //ruta que enlaza a controlador MovieController pero usando resource
 Route::resource('movie','MovieController');
+
+Route::get('/','FrontController@index');
+Route::get('contacto','FrontController@contacto');
+Route::get('reviews','FrontController@reviews');
