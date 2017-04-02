@@ -6,9 +6,10 @@ use Illuminate\Http\Request;
 
 class UsuarioController extends Controller
 {   
-    //
+    //funcion que lista a los usuarios
     public function index(){
-
+    	$users = \App\User::All();
+    	return view('usuario.index',compact('users'));
     }
 
     //funcion para crear un usuario
