@@ -1,5 +1,19 @@
 @extends('layout.admin')
 
 @section('content')
-   <h1>cracion de un usuario</h1>
+   <form action="">
+   	<div class="form-group">
+   		<label for="">Nombre</label>
+   		<input type="text" class="form-control">
+   	</div>
+   	<div class="form-group">
+   		<label for="">correo</label>
+   		<input type="text" class="form-control">
+   	</div>
+   	<div class="form-group">
+   		<label for="">contraseña</label>
+   		<input type="text" class="form-control">
+   	</div>
+   	<button class="btn btn-primary">Registrar</button>
+   </form>
 @endsection
