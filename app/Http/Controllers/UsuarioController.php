@@ -17,7 +17,14 @@ class UsuarioController extends Controller
     }
 
     //funcion para guardar usuario
-    public function store(){
-    	return "quieres guardar un usuario";
+    public function store(Request $request){
+        
+        \App\User::create([
+        	'name'=>$request['nombre'],
+        	'email'=>$request['correo'],
+        	'password'=>$request['pas']
+        	]);
+
+    	return "usuario registrado";
     }
 }
