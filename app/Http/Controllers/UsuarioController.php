@@ -26,6 +26,6 @@ class UsuarioController extends Controller
         	'password'=>$request['pas']
         	]);
 
-    	return "usuario registrado";
+    	return redirect('/usuario')->with('message','store');
     }
 }
