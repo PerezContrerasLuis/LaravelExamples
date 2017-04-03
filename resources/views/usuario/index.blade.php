@@ -7,12 +7,12 @@
    		<th>Correo</th>
    		<th>Operacion</th>
    	</thead>
-   	<tbody>
    		@foreach ($users as $user)
+   			<tbody>
 		    <td>{{$user->name}}</td>
 		    <td>{{$user->email}}</td>
 		    <td></td>
+		    </tbody>
 		@endforeach
-   	</tbody>
    </table>
 @endsection
