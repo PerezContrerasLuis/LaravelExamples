@@ -28,4 +28,17 @@ class UsuarioController extends Controller
 
     	return redirect('/usuario')->with('message','store');
     }
+
+    //funcion para cargar vista editar usuario
+    public function edit($id){
+    	$user = \App\User::find($id);
+    	return view('usuario.edit',['user'=>$user]);
+    }
+
+    //function para actualizar usuario
+    public function update($id,Request $request){
+    	$user = \App\User::find($id);
+    	$user->fill($request->all());
+    	$user->save();
+    }
 }
