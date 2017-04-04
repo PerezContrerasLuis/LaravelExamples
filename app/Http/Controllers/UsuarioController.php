@@ -40,5 +40,6 @@ class UsuarioController extends Controller
     	$user = \App\User::find($id);
     	$user->fill($request->all());
     	$user->save();
+    	return redirect('/usuario')->with('message','Supdate');
     }
 }

@@ -7,6 +7,10 @@
    <div class="alert alert-success" role="alert">Usuario registrado con exito</div>
 @endif
 
+@if ($message=='Supdate')
+   <div class="alert alert-success" role="alert">Usuario actualizado con exito</div>
+@endif
+
 @section('content')
    <table class="table">
    	<thead>
