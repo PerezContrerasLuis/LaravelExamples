@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class UsuarioController extends Controller
 {   
     //funcion que lista a los usuarios
     public function index(){
-    	$users = \App\User::All();
+    	$users = User::All();
     	return view('usuario.index',compact('users'));
     }
 
@@ -20,7 +21,7 @@ class UsuarioController extends Controller
     //funcion para guardar usuario
     public function store(Request $request){
         
-        \App\User::create([
+        User::create([
         	'name'=>$request['nombre'],
         	'email'=>$request['correo'],
         	'password'=>$request['pas']
@@ -31,13 +32,13 @@ class UsuarioController extends Controller
 
     //funcion para cargar vista editar usuario
     public function edit($id){
-    	$user = \App\User::find($id);
+    	$user = User::find($id);
     	return view('usuario.edit',['user'=>$user]);
     }
 
     //function para actualizar usuario
     public function update($id,Request $request){
-    	$user = \App\User::find($id);
+    	$user = User::find($id);
     	$user->fill($request->all());
     	$user->save();
     	return redirect('/usuario')->with('message','Supdate');
