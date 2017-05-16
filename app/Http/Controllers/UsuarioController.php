@@ -22,9 +22,9 @@ class UsuarioController extends Controller
     public function store(Request $request){
         
         User::create([
-        	'name'=>$request['nombre'],
-        	'email'=>$request['correo'],
-        	'password'=>$request['pas']
+        	'name'=>$request['name'],
+        	'email'=>$request['email'],
+        	'password'=>$request['password']
         	]);
 
     	return redirect('/usuario')->with('message','store');
