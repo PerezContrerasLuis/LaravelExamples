@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Session;
+use Redirect;
 
 class UsuarioController extends Controller
 {   
@@ -27,7 +29,7 @@ class UsuarioController extends Controller
         	'password'=>$request['password']
         	]);
 
-    	return redirect('/usuario')->with('message','store');
+    	return redirect('/usuario')->with('message','Usuario registrado con exito');
     }
 
     //funcion para cargar vista editar usuario
@@ -41,6 +43,7 @@ class UsuarioController extends Controller
     	$user = User::find($id);
     	$user->fill($request->all());
     	$user->save();
-    	return redirect('/usuario')->with('message','Supdate');
+        Session::flash('message','usuario actualizado con exito');
+    	return Redirect::to('/usuario');
     }
 }

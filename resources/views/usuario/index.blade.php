@@ -1,14 +1,9 @@
 @extends('layout.admin')
 
-<!-- creamos variable de mensaje -->
-<?php $message=Session::get('message')?>
-
-@if ($message=='store')
-   <div class="alert alert-success" role="alert">Usuario registrado con exito</div>
-@endif
-
-@if ($message=='Supdate')
-   <div class="alert alert-success" role="alert">Usuario actualizado con exito</div>
+@if(Session::has('message'))
+   <div class="alert alert-success" role="alert">
+      {{Session::get('message')}}
+   </div>
 @endif
 
 @section('content')
