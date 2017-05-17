@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\UserCreateRequest;
+use App\Http\Requests\UserupdateRequest;
 use App\User;
 use Session;
 use Redirect;
@@ -40,7 +41,7 @@ class UsuarioController extends Controller
     }
 
     //function para actualizar usuario
-    public function update($id,Request $request){
+    public function update($id,UserupdateRequest $request){
     	$user = User::find($id);
     	$user->fill($request->all());
     	$user->save();
