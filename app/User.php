@@ -4,10 +4,12 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable,SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -27,6 +29,9 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    /*var para softdeletes para ocultar en lugar de eliminar o destruir un recurso*/
+    protected $dates= ['deleted_at'];
+    
     public function setPasswordAttribute($valor){
         if(!empty($valor)){
             $this->attributes['password']= \Hash::make($valor);

@@ -51,7 +51,8 @@ class UsuarioController extends Controller
 
     //funcion para eliminar un usuario
     public function destroy($id){
-        User::destroy($id);
+        $user= User::find($id);
+        $user->delete();
         Session::flash('message','usuario eliminado con exito');
         return Redirect::to('/usuario');
     }
