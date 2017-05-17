@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\UserCreateRequest;
 use App\User;
 use Session;
 use Redirect;
@@ -21,7 +22,7 @@ class UsuarioController extends Controller
     }
 
     //funcion para guardar usuario
-    public function store(Request $request){
+    public function store(UserCreateRequest $request){
         
         User::create([
         	'name'=>$request['name'],

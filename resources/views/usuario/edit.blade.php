@@ -1,6 +1,8 @@
 @extends('layout.admin')
 
 @section('content')
+   <!-- incluimos la etiqueta que muestra errores si existen -->
+   @include('alerts.request')
    <!-- <form action="usuario.store" method="post"> -->
    {!!Form::model($user, ['route' => ['usuario.update', $user->id], 'method'=>'PUT'])!!}
    	@include('usuario.forms.usr')
