@@ -1,28 +1,139 @@
-<html>
-    <head>
-        <title>admin secction</title>
-        <!-- Latest compiled and minified CSS 
-        <link rel="stylesheet" href="css/bootstrap.min.css" >
-        -->
+<!DOCTYPE html>
+<html lan="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta="viewport" content="width=device-width initial-scale=1">
+    <tilte></title>
         {!!Html::style('css/bootstrap.min.css')!!}
-
-        <!-- Optional theme 
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">-->
-        {!!Html::style('css/bootstrap-theme.min.css')!!}
-        <!-- Latest compiled and minified JavaScript
-        <script src="js/bootstrap.min.js" ></script> -->
+        {!!Html::style('css/bootstrap-theme.min.css')!!}   
+        {!!Html::script('js/jquery.min.js')!!}
         {!!Html::script('js/bootstrap.min.js')!!}
     </head>
-
     <body>
-        <header>
-            header admin for test
-        </header> 
+        <div class="container">
+            <div class="row" style="margin-bottom: 80px">
+                <div class="col col-md-12">
+                   <!--  <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="index.html">Cinema Admin</a>
+                        </div>
+                        <ul>
+                            <li>
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <i class="fa fa-user fa-fw"></i><i class="fa fa-caret-down"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-user">
+                                    <li>
+                                        <a href="#"><i class="fa fa-gear fa-fw"></i>Ajustes</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-gear fa-fw"></i>Logout</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav> -->
+                     <nav class="navbar navbar-default navbar-fixed-top">
+                      <div class="container">
+                        <div class="navbar-header">
+                          <a class="navbar-brand" href="#">
+                            Cinema
+                          </a>
+                          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                          </button>
 
-         @yield('content')
+                        </div>
+                        <div id="navbar" class="navbar-collapse collapse" style="float:right">
+                          <ul class="nav navbar-nav">
+                            
+                            <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">user <span class="caret"></span></a>
+                              <ul class="dropdown-menu">
+                                <li><a href="#">Login</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Logout</a></li>
+                              </ul>
+                            </li>
+                            
+                          </ul>
+                        </div><!--/.nav-collapse -->
+                      </div>
+                    </nav>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-md-3">
+                        <div class="navbar-default sidebar" role="navifation">
+                            <div class="sidebar-nav navbar-collapse">
+                                <div class="nav" id="side-menu">
+                                    <li>
+                                        <a href="#"><i class="fa fa-users fa-fw"></i>Usuario<span class="fa arrow"></span></a>
+                                        <ul class="nav nav-second-level">
+                                            <li>
+                                                <a href="#"><i class='fa fa-plus fa-fw'></i>Agregar</a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class='fa fa-list-ol fa-fw'></i>Usuarios</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-users fa-fw"></i>Pelicula<span class="fa arrow"></span></a>
+                                        <ul class="nav nav-second-level">
+                                            <li>
+                                                <a href="#"><i class='fa fa-plus fa-fw'></i>Agregar</a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class='fa fa-list-ol fa-fw'></i>Peliculas</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-users fa-fw"></i>Genero<span class="fa arrow"></span></a>
+                                        <ul class="nav nav-second-level">
+                                            <li>
+                                                <a href="#"><i class='fa fa-plus fa-fw'></i>Agregar</a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class='fa fa-list-ol fa-fw'></i>Generos</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </div>
+                            </div>
+                        </div>
 
-        <footer>
-            pie de admin 
-        </footer> 
+                    <!-- </nav> -->
+                </div>
+                <div class="col col-md-9">
+                    @yield('content')
+
+                    <footer>
+                        <div class="row" style="margin-bottom: 80px">
+                            <div class="col col-md-12">
+                              
+                                 <nav class="navbar navbar-default navbar-fixed-bottom">
+                                  <div class="container">
+                                    <span><h6>@author: luis perez contreras test de desarrollo en laravel</h6></span>       
+                                    
+                                  </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </footer>
+                </div> 
+            </div>
+        </div>
     </body>
-</html> 
+    </html> 
