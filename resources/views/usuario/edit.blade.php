@@ -4,6 +4,12 @@
    <!-- <form action="usuario.store" method="post"> -->
    {!!Form::model($user, ['route' => ['usuario.update', $user->id], 'method'=>'PUT'])!!}
    	@include('usuario.forms.usr')
-   	<button class="btn btn-primary">Registrar</button>
+   	<button class="btn btn-primary">Actualizar</button>
+   {!! Form::close() !!}
+
+   <br/>
+   <!-- form para eliminar un usuario -->
+    {!!Form::open(['route' => ['usuario.destroy', $user->id], 'method'=>'DELETE'])!!}
+      <button class="btn btn-danger">Eliminar</button>
    {!! Form::close() !!}
 @endsection

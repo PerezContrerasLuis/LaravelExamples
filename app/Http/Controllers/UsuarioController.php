@@ -46,4 +46,11 @@ class UsuarioController extends Controller
         Session::flash('message','usuario actualizado con exito');
     	return Redirect::to('/usuario');
     }
+
+    //funcion para eliminar un usuario
+    public function destroy($id){
+        User::destroy($id);
+        Session::flash('message','usuario eliminado con exito');
+        return Redirect::to('/usuario');
+    }
 }
