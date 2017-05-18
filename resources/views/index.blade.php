@@ -66,24 +66,24 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    <a href="{{ url('/login') }}">Login</a>
-                    <a href="{{ url('/register') }}">Register</a>
-                </div>
-            @endif
-
+            
             <div class="content">
                 <div class="title m-b-md">
-                    INDEX
+                    Bienvenido 
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                   {!!Form::open(['route'=>'log.store','method'=>'POST'])!!}
+                        <div class="form-group">
+                            {!!Form::label('correo','Correo:')!!}
+                            {!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingresa tu correo'])!!}
+                        </div>
+                        <div class="form-group">
+                            {!!Form::label('contrasena','Contraseña:')!!}
+                            {!!Form::password('password',['class'=>'form-control','placeholder'=>'Ingresa tu contraseña'])!!}
+                        </div>
+                        {!!Form::submit('Iniciar',['class'=>'btn btn-primary'])!!}
+                    {!!Form::close()!!}
                 </div>
             </div>
         </div>

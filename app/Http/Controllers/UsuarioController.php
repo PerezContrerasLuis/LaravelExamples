@@ -25,11 +25,7 @@ class UsuarioController extends Controller
     //funcion para guardar usuario
     public function store(UserCreateRequest $request){
         
-        User::create([
-        	'name'=>$request['name'],
-        	'email'=>$request['email'],
-        	'password'=>$request['password']
-        	]);
+        User::create($request->all());
 
     	return redirect('/usuario')->with('message','Usuario registrado con exito');
     }
