@@ -40,3 +40,4 @@ Route::get('reviews','FrontController@reviews');
 
 Route::resource('usuario','UsuarioController');
 Route::resource('log','LogController');
+Route::get('logout','LogController@logout');

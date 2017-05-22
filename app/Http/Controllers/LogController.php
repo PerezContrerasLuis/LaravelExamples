@@ -18,4 +18,10 @@ class LogController extends Controller
    	Session::flash('message-error','Datos incorrectos');
    	return Redirect::to('/');
    }
+
+   //Funcion para deslogearse
+   public function logout(){
+   	Auth::logout();
+   	return Redirect::to('/');
+   }
 }
