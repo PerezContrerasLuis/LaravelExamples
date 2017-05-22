@@ -75,6 +75,7 @@
             <div class="content">
                 <div class="title m-b-md">
                     @include('alerts.errors') 
+                    @include('alerts.request') 
                 </div>
 
                 <div class="links">
