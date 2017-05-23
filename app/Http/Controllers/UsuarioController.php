@@ -11,6 +11,11 @@ use Redirect;
 
 class UsuarioController extends Controller
 {   
+     public function __construct(){
+      $this->middleware('auth');
+      $this->middleware('admin',['only'=>['create','edit']]);
+   }
+
     //funcion que lista a los usuarios
     public function index(){
     	$users = User::paginate(5);
