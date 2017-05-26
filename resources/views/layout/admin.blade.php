@@ -181,5 +181,6 @@
                 </div> 
             </div>
         </div>
+        {!!Html::script('js/genero.js')!!}
     </body>
     </html> 
