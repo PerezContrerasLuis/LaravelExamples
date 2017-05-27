@@ -9,6 +9,10 @@ class GeneroController extends Controller
 {
     //
 
+    public function index(){
+    	return view('genero.index');
+    }
+
     public function create(){
     	return view('genero.create');
     }
@@ -21,5 +25,13 @@ class GeneroController extends Controller
     			 "mensaje"=>'creado'
     			]);
     	}
+    }
+
+    public function listing(){
+    	$genres = Genre::all();
+    	return response()->json(
+    		$genres->toArray()
+    		); 
+		
     }
 }
